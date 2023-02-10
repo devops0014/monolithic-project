@@ -1,0 +1,25 @@
+---
+- hosts: aws_ec2
+  become: yes
+  connection: ssh
+  user: ec2-user
+
+  vars:
+    ansible_ssh_private_key_file: "/etc/ansible/mykey.pem"
+    ansible_ssh_user: "ec2-user"
+
+  tasks:
+    - name: install httpd
+      action: yum name=httpd state=present
+
+    - name: restart httpd
+      service: name=httpd state=restarted
+
+    - name: install git in dev server
+      action: yum name=git state=present
+
+    - name: get code from github
+      git:
+        repo: https://github.com/devops0014/monolithic-project.git
+        dest: /var/www/html/
+        version: frontend
