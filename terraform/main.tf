@@ -5,7 +5,7 @@ secret_key = "t/baFzONvgV+shde6HAq37koqyJY1xM0AAGcB8/9"
 }
 
 resource "aws_instance" "key" {
-ami = "ami-09ba48996007c8b50"
+ami = "ami-012b9156f755804f5"
 instance_type = "t2.micro"
 key_name = "nwkpp"
 vpc_security_group_ids = [aws_security_group.demo-sg.id]
