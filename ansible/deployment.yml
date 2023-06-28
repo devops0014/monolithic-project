@@ -20,6 +20,6 @@
 
     - name: get code from github
       git:
-        repo: https://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@github.com/devops0014/monolithic-project.git
+        repo: https://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@github.com/devops0014/monolithic-project.git
         dest: /var/www/html/
         version: frontend
